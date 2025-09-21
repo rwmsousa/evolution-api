@@ -6,9 +6,9 @@
   "type": "commonjs",
   "scripts": {
     "build": "tsc --noEmit && tsup",
-    "start": "tsx ./src/main.ts",
-    "start:prod": "node dist/main",
-    "dev:server": "tsx watch ./src/main.ts",
+    "start": "NODE_OPTIONS=--experimental-global-webcrypto tsx ./src/main.ts",
+    "start:prod": "NODE_OPTIONS=--experimental-global-webcrypto node dist/main",
+    "dev:server": "NODE_OPTIONS=--experimental-global-webcrypto tsx watch ./src/main.ts",
     "test": "tsx watch ./test/all.test.ts",
     "lint": "eslint --fix --ext .ts src",
     "lint:check": "eslint --ext .ts src",
