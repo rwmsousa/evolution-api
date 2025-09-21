@@ -25,7 +25,10 @@ import compression from 'compression';
 import cors from 'cors';
 import express, { json, NextFunction, Request, Response, urlencoded } from 'express';
 import { join } from 'path';
-
+import { Crypto } from '@peculiar/webcrypto';
+if (!globalThis.crypto) {
+  globalThis.crypto = new Crypto();
+}
 function initWA() {
   waMonitor.loadInstance();
 }
